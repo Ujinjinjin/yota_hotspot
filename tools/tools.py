@@ -5,7 +5,7 @@ __all__ = ('is_admin', 'create_reg_key', 'is_configured_for_hotspot', 'delete_re
            'configure_hosts')
 
 key_path: str = r'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
-key_name: str = r'DefaultTTL2'
+key_name: str = r'DefaultTTL'
 key_value: int = 65
 key_type: str = 'REG_DWORD'
 _reg: Reg = Reg()

@@ -10,14 +10,14 @@ class Program:
         if is_configured_for_hotspot():
             print('Your computer configured for hotspot')
             print('Cleaning stuff...')
-            # delete_reg_key()
-            # clean_hosts()
+            delete_reg_key()
+            clean_hosts()
             print('Done! Now your PC is clean and beautiful')
         else:
             print('Your computer is not configured for hotspot')
             print('Doing some stuff...')
-            # create_reg_key()
-            # configure_hosts()
+            create_reg_key()
+            configure_hosts()
             print('Done! Now your PC is ready to receive hotspot and stuff')
 
         print('Almost there, you have to restart your PC.')
