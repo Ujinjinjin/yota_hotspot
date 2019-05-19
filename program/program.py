@@ -1,9 +1,9 @@
-import os
 import platform
-from .utils.utils import *
+from typing import Dict, Type
+
 from .configurator.configurator import *
 from .enums import *
-from typing import Dict, Type
+from .utils.utils import *
 
 __all__ = ('Program',)
 
@@ -13,9 +13,9 @@ class Program:
 
     def __init__(self, main_file: str):
         self.main_file: str = main_file
+        self.OS: OperationSystem = self._detect_system()
         self.utils: BaseUtils = self._get_utils()
         self.configurator: BaseConfigurator = self._get_configurator()
-        self.OS: OperationSystem = self._detect_system()
 
     def start(self):
         """Start program as admin"""
@@ -26,7 +26,7 @@ class Program:
 
     def _start(self):
         """Main logic"""
-        if self.configurator.is_configured_for_hotspot():
+        if self.configurator.is_configured_for_hotspot:
             print('Your computer configured for hotspot')
             print('Cleaning stuff...')
             self.configurator.delete_reg_key()
