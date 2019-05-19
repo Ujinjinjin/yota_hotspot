@@ -1,14 +1,10 @@
-import ctypes
-import sys
+try:
+    if __name__ == '__main__':
+        from program.program import Program
 
-from tools.tools import *
-from program import Program
+        program: Program = Program(__file__)
+        program.start()
 
-
-if __name__ == '__main__':
-    if is_admin():
-        # Run program
-        Program.start()
-    else:
-        # Re-run the program with admin rights
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+except Exception as ex:
+    print(ex)
+    input('Press enter to continue')
