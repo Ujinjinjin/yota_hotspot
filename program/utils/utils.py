@@ -1,6 +1,6 @@
 import ctypes
-import sys
 import os
+import sys
 from abc import ABC, abstractmethod
 
 __all__ = ('BaseUtils', 'WindowsUtils', 'LinuxUtils',)
@@ -8,6 +8,7 @@ __all__ = ('BaseUtils', 'WindowsUtils', 'LinuxUtils',)
 
 class BaseUtils(ABC):
     """Base abstract utils class"""
+
     def __init__(self, main_file: str):
         self.main_file = main_file
 

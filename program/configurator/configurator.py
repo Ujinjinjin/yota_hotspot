@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from winregistry import WinRegistry as Reg
 
 __all__ = ('BaseConfigurator', 'WindowsConfigurator',)
